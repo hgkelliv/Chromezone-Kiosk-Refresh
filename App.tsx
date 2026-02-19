@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { Troubleshooting } from './components/Troubleshooting';
@@ -15,6 +15,37 @@ export default function App() {
   const [initialAiQuery, setInitialAiQuery] = useState<string>('');
   const [successMessage, setSuccessMessage] = useState<string>("You're all set!");
   
+  // Force Kiosk Fullscreen
+  useEffect(() => {
+    const enterFullscreen = () => {
+      const elem = document.documentElement;
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch(err => {
+          // Errors are expected if user hasn't interacted yet
+          console.log(`Fullscreen attempt blocked: ${err.message}`);
+        });
+      }
+    };
+
+    // Attempt immediately (works if launched as PWA in some contexts)
+    enterFullscreen();
+
+    // Attach listeners to force fullscreen on first interaction
+    const handleInteraction = () => {
+      enterFullscreen();
+    };
+
+    window.addEventListener('click', handleInteraction);
+    window.addEventListener('touchstart', handleInteraction);
+    window.addEventListener('keydown', handleInteraction);
+
+    return () => {
+      window.removeEventListener('click', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+      window.removeEventListener('keydown', handleInteraction);
+    };
+  }, []);
+
   // Handlers
   const goHome = () => {
     setView('HOME');
