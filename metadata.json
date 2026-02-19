@@ -1,0 +1,5 @@
+{
+  "name": "Chromezone Kiosk",
+  "description": "A modern, touch-optimized Chromebook troubleshooting and loaner management kiosk for Somerville Public Schools.",
+  "requestFramePermissions": []
+}
