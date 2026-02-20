@@ -331,7 +331,7 @@ export const LoanerSystem: React.FC<LoanerSystemProps> = ({ onBack, onComplete }
         <div className="space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-slate-800">Select a Device</h2>
-            <p className="text-slate-500">Tap the device number that matches the sticker.</p>
+            <p className="text-slate-500">Open the Loaner Chromebooks tower near this computer. Pick an available device. You will see a sticker on top of the chromebook with a number. Tap the device number that matches the sticker.</p>
           </div>
           
           {availableDevices.length === 0 ? (
