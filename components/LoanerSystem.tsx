@@ -234,7 +234,7 @@ export const LoanerSystem: React.FC<LoanerSystemProps> = ({ onBack, onComplete }
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-slate-800 mb-1">Return Your Loaner</h3>
-                  <p className="text-slate-500">Returning your loaner? Enter info here.</p>
+                  <p className="text-slate-500">Returning your loaner? Enter loaner number here.</p>
                 </div>
               </motion.button>
             </div>
@@ -331,13 +331,13 @@ export const LoanerSystem: React.FC<LoanerSystemProps> = ({ onBack, onComplete }
         <div className="space-y-6">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-slate-800">Select a Device</h2>
-            <p className="text-slate-500">Open the Loaner Chromebooks tower near this computer. Pick an available device. You will see a sticker on top of the chromebook with a number. Tap the device number that matches the sticker.</p>
+            <p className="text-white/90">Open the Loaner Chromebooks tower near this computer. Pick an available device. You will see a sticker on top of the chromebook with a number. Tap the device number that matches the sticker.</p>
           </div>
           
           {availableDevices.length === 0 ? (
-             <div className="text-center p-12 bg-slate-100 rounded-3xl border-2 border-dashed border-slate-300">
-                <p className="text-slate-500 font-medium">No devices currently available.</p>
-                <p className="text-slate-400 text-sm mt-2">Please check back later or see a technician.</p>
+             <div className="text-center p-12 bg-white/20 backdrop-blur rounded-3xl border-2 border-dashed border-slate-300">
+                <p className="text-white font-medium">No devices currently available.</p>
+                <p className="text-white/80 text-sm mt-2">Please check back later or see a technician.</p>
              </div>
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -384,7 +384,7 @@ export const LoanerSystem: React.FC<LoanerSystemProps> = ({ onBack, onComplete }
                 onClick={handleConfirmBorrow}
                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-emerald-200 transition-transform active:scale-95 mb-3"
             >
-                Yes, Borrow This Device
+                Yes, Borrow This Device 
             </button>
              <button
                 onClick={() => setStep('device_grid')}
