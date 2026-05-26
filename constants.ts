@@ -2,7 +2,7 @@ import { TroubleshootingFlow, LoanerDevice } from './types';
 
 export const SCHOOL_LOGO_URL = "https://aptg.co/NBXZ7x";
 export const APP_NAME = "Chromezone";
-export const TICKET_URL = "https://airtable.com/appebVtuYEdmMqcn4/pagqIveB6XR6pqpEs/form";
+export const TICKET_URL = "https://cbconsole-46c61.web.app/tickets.html";
 
 // Google Apps Script Web App URL
 export const LOANER_API_URL = "https://script.google.com/macros/s/AKfycbzAOjXvbz4TyvvNzTNIA67IpA2EuKU2-VHyRKD9kutlQ4hyzFm2uWbjAl_WKq6PCOTDTQ/exec"; 
