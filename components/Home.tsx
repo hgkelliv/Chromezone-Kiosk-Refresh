@@ -33,7 +33,7 @@ const item: Variants = {
   }
 };
 
-export const Home: React.FC<HomeProps> = ({ onFlowSelect, onLoanerSelect, onTicketSelect, onAiSelect }) => {
+export const Home: React.FC<HomeProps> = ({ onFlowSelect, onTicketSelect, onAiSelect }) => {
   const [aiInput, setAiInput] = useState('');
 
   const handleAiSubmit = (e: React.FormEvent) => {
