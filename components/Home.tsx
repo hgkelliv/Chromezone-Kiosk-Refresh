@@ -5,7 +5,6 @@ import { SCHOOL_LOGO_URL } from '../constants';
 
 interface HomeProps {
   onFlowSelect: (flowId: string) => void;
-  onLoanerSelect: () => void;
   onTicketSelect: () => void;
   onAiSelect: (query: string) => void;
 }
@@ -293,53 +292,29 @@ export const Home: React.FC<HomeProps> = ({ onFlowSelect, onLoanerSelect, onTick
         </motion.div>
       </div>
 
-      {/* Fixed Footer Stack */}
+    {/* Fixed Footer */}
       <div className="fixed bottom-0 left-0 right-0 z-50">
-        {/* Gradient fade to integrate smoothly with content */}
         <div className="absolute inset-0 bg-gradient-to-t from-background-light via-background-light/95 to-transparent -top-20 pointer-events-none"></div>
         
-        <div className="relative px-8 pb-8 pt-4 max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 gap-4">
-
-            {/* Loaner Button */}
-            <motion.button 
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.99 }}
-              onClick={onLoanerSelect}
-              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white p-6 rounded-2xl shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-4 transition-all"
-            >
-              <img 
-                  src="https://img.icons8.com/fluency/96/laptop.png" 
-                  alt="Loaner Laptop" 
-                  className="w-14 h-14 object-contain drop-shadow-md"
-              />
-              <div className="text-left">
-                 <span className="block font-bold text-2xl leading-none mb-1">Loaner Chromebooks/Charger</span>
-                 <span className="text-emerald-100 font-medium text-lg">Borrow a device or charger</span>
-              </div>
-            </motion.button>
-
-            {/* Ticket Button */}
-            <motion.button 
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.99 }}
-              onClick={onTicketSelect}
-              className="w-full bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 p-6 rounded-2xl shadow-xl flex items-center justify-center gap-4 transition-all"
-            >
-              <img 
-                  src="https://img.icons8.com/fluency/96/starred-ticket.png" 
-                  alt="Submit Ticket" 
-                  className="w-14 h-14 object-contain drop-shadow-md"
-              />
-              <div className="text-left">
-                <span className="block font-bold text-2xl leading-none mb-1">Submit Ticket</span>
-                <span className="text-slate-500 font-medium text-lg">Request Hardware Repair</span>
-              </div>
-            </motion.button>
-          </div>
+        <div className="relative px-8 pb-8 pt-4 max-w-7xl mx-auto flex justify-center">
+          <motion.button 
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.99 }}
+            onClick={onTicketSelect}
+            className="w-full max-w-lg bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 p-6 rounded-2xl shadow-xl flex items-center justify-center gap-4 transition-all"
+          >
+            <img 
+              src="https://img.icons8.com/fluency/96/starred-ticket.png" 
+              alt="Submit Ticket" 
+              className="w-14 h-14 object-contain drop-shadow-md"
+            />
+            <div className="text-left">
+              <span className="block font-bold text-2xl leading-none mb-1">Submit Ticket</span>
+              <span className="text-slate-500 font-medium text-lg">Request Hardware Repair</span>
+            </div>
+          </motion.button>
         </div>
       </div>
-
     </div>
   );
 };
